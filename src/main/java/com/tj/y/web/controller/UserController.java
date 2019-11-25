@@ -8,10 +8,7 @@ import com.tj.y.web.vo.responseVO.LoginResObj;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -30,5 +27,10 @@ public class UserController {
     }
 
     return ResponseEntity.ok(loginResObj);
+  }
+
+  @GetMapping("/user/add")
+  public ResponseEntity userAdd(){
+    userService.userAdd();
   }
 }

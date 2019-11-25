@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
   @Transactional(propagation = Propagation.REQUIRES_NEW)
   public LoginResObj login(String account, String password) {
     User user = userMapper.selectOne(Wrappers.<User>query().lambda()
-        .eq(User::getUsername, account).eq(User::getPassword, password)
+        .eq(User::getAccount, account).eq(User::getPassword, password)
         .eq(User::getHasDelete, BaseStatusEnum.UN_DELETE.getValue()));
     if (Objects.isNull(user)) {
       throw new ServiceException(ServiceExceptionEnum.USER_LOGIN_ERROR);
