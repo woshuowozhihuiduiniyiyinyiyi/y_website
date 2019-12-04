@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="swiper(list)">
+  <div id="swiper" class="carousel slide swiper" data-ride="carousel" data-interval="3000">
+    <ol class="carousel-indicators">
+      <li th:each="item,itemState:${list}" th:class="${itemState.index == 0 ? 'active' : ''}" data-target="#swiper" th:data-slide-to="${itemState.index}"></li>
+    </ol>
+    <ol class="carousel-inner list-unstyled">
+      <li th:each="item,itemState:${list}" th:class="'carousel-item' + ${itemState.index == 0 ? ' active' : ''}">
+        <img th:src="${item.picture} + '?x-oss-process=image/resize,m_fill,w_1920,h_720/quality,q_70/format,jpg/interlace,1'" class="d-block w-100">
+        <div class="swiper__more">
+          <p class="swiper__info" th:text="${item.title}"></p>
+          <button class="btn btn-lg rounded-pill swiper__button" type="button" th:onclick="|toSwiperDetail('${item.attachUrl}')|">
+            <i class="iconfont icon-bofang"></i>
+            <span class="swiper__button-720">720°</span>
+            <div class="swiper__button-text">
+              <span th:text="#{components.swiper.buttonText1}"></span>
+              <span th:text="#{components.swiper.buttonText2}"></span>
+            </div>
+          </button>
+        </div>
+      </li>
+    </ol>
+    <div class="carousel-control container">
+      <a class="carousel-control-prev" href="#swiper" role="button" data-slide="prev">
+        <i class="iconfont icon-zuojiantou swiper__icon"></i>
+        <span class="sr-only" th:text="#{components.swiper.prev}">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#swiper" role="button" data-slide="next">
+        <i class="iconfont icon-youjiantou swiper__icon"></i>
+        <span class="sr-only" th:text="#{components.swiper.next}">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+</html>

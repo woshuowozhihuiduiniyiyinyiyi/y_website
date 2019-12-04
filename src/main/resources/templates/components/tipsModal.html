@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="tips_modal">
+  <div class="modal fade tips-modal" id="tipsModal" tabindex="-1" role="dialog" aria-labelledby="tipsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title tips-modal__title" id="tipsModalTitle"></h1>
+        </div>
+        <p class="modal-body tips-modal__body"></p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-primary rounded-pill" onclick="closeTipsModal()"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

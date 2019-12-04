@@ -1,0 +1,36 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Robots" content="all">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130709324-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-130709324-3');
+    </script>
+    <link rel="shortcut icon" th:href="@{/assert/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/vendor/vendor.css}">
+    <link rel="stylesheet" th:href="@{/common/common.css}">
+    <link rel="stylesheet" th:href="@{/layout/default.css}">
+</head>
+<body class="base-layout">
+
+<div id="outdated"></div>
+<th:block th:include="layout/base/header :: base_header"/>
+<div layout:fragment="content" class="base-content"></div>
+<th:block th:include="layout/base/footer :: base_footer"/>
+<th:block th:include="components/tipsModal::tips_modal" />
+
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es5" async defer></script>
+<script th:src="@{/vendor/vendor.js}"></script>
+<script th:src="@{/common/common.js}"></script>
+<script th:src="@{/layout/default.js}"></script>
+<script th:src="@{/components/tipsModal.js}"></script>
+<th:block layout:fragment="script"/>
+
+</body>
+</html>

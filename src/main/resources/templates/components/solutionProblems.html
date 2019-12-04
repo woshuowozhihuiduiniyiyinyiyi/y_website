@@ -1,0 +1,19 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="solution_problems(list)">
+  <div class="container solution-problems">
+    <div class="row">
+      <div class="col-md-12 col-lg solution-problems__image">
+        <img th:src="${list[0].picture} + '?x-oss-process=image/resize,w_524,h_334'" th:alt="#{solution.problems.illustrations}">
+      </div>
+      <ol class="col-md-12 col-lg solution-problems__list list-unstyled">
+        <h2 class="solution-problems__title" th:text="#{solution.problems.title}"></h2>
+        <li class="solution-problems__item" th:each="item:${list}">
+          <span class="solution-problems__item-index" th:text="${itemStat.index + 1}"></span>
+          <p class="solution-problems__item-text" th:text="${item.content}"></p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html th:lang="${#request.getAttribute('AIHOUSE_USER_ACCESS_LOCALE')}" lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Robots" content="all">
+    <link rel="shortcut icon" href="../../static/assert/images/favicon.ico">
+    <link rel="stylesheet" th:href="@{/vendor/vendor.css}">
+    <link rel="stylesheet" th:href="@{/layout/error.css}">
+</head>
+<body class="error-layout">
+
+<div layout:fragment="content" class="error-content container"></div>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es5"></script>
+<script th:src="@{/vendor/vendor.js}"></script>
+<script th:src="@{/common/common.js}"></script>
+<script th:src="@{/layout/error.js}"></script>
+<th:block layout:fragment="script"/>
+
+</body>
+</html>

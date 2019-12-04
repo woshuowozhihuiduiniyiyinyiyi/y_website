@@ -29,8 +29,8 @@ public class UserController {
     return ResponseEntity.ok(loginResObj);
   }
 
-  @GetMapping("/user/add")
-  public ResponseEntity userAdd(){
-    userService.userAdd();
-  }
+//  @GetMapping("/user/add")
+//  public ResponseEntity userAdd(){
+//    userService.userAdd();
+//  }
 }

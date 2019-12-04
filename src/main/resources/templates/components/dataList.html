@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="data_list(list)">
+  <div class="container data-list">
+    <ul class="row list-unstyled data-list__main">
+      <li class="col-6 col-md-4 col-lg data-list__item" th:each="item:${list}">
+        <label class="data-list__label" th:text="${item.title}"></label>
+        <div class="data-list__num" th:text="${item.content}"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+</html>

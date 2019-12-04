@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="base_header">
+  <header class="base-header">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary base-header__nav">
+      <a class="navbar-brand base-header__brand" th:href="'/'+${#request.getAttribute('AIHOUSE_USER_ACCESS_LOCALE')} ">
+        <img th:alt="首页" src="/files/aihouse.png" class="base-header__logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--<div class="collapse navbar-collapse" id="navbarContent">-->
+        <!--<ul class="navbar-nav mr-auto">-->
+          <!--<li class="nav-item dropdown" th:each="toolUnit:${TOOLBAR}">-->
+            <!--<a class="nav-link dropdown-toggle base-header__dropdown-link"-->
+               <!--th:href="${(not #strings.isEmpty(toolUnit.url) &amp;&amp; #strings.startsWith(toolUnit.url,'/') ? '/'+ #request.getAttribute('AIHOUSE_USER_ACCESS_LOCALE') : '') + toolUnit.url}"-->
+               <!--id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="return linkToPage(this)">-->
+              <!--<span th:text="${toolUnit.value}"></span>-->
+              <!--<i th:if="${toolUnit.children != null &amp;&amp; not #lists.isEmpty(toolUnit.children)}" class="iconfont icon-xiala"></i>-->
+            <!--</a>-->
+            <!--<div class="dropdown-menu base-header__dropdown-menu" aria-labelledby="navbarDropdown" th:if="${toolUnit.children != null &amp;&amp; not #lists.isEmpty(toolUnit.children)}">-->
+              <!--<a class="dropdown-item base-header__dropdown-item" th:each="toolUnitChild:${toolUnit.children}" th:href="${(#strings.startsWith(toolUnitChild.url,'/') ? '/'+ #request.getAttribute('AIHOUSE_USER_ACCESS_LOCALE') : '') + toolUnitChild.url}" th:title="${toolUnitChild.value}" th:text="${toolUnitChild.value}" onclick="return linkToPage(this)"></a>-->
+            <!--</div>-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<div class="navbar-nav my-2 my-lg-0 base-header__right">-->
+          <!--<div th:if="${USER_INFO == null}">-->
+            <!--<button class="btn btn-link my-2 my-sm-0 base-header__button-link base-header__signin" type="button" th:text="#{header.signIn}" th:onclick="|toSso('${sso}')|"></button>-->
+            <!--<button class="btn rounded-pill my-2 my-sm-0 base-header__button base-header__signup" type="button" th:text="#{header.signUpFree}" th:onclick="|toSso('${ssoReg}')|"></button>-->
+          <!--</div>-->
+          <!--<div th:unless="${USER_INFO == null}" class="dropdown base-header__avatar-dropdown">-->
+            <!--<button class="btn rounded-pill my-2 my-sm-0 base-header__button base-header__design" type="button" th:text="#{header.startToDesign}" th:onclick="|toDesign('${startDesign}')|"></button>-->
+            <!--<img class="base-header__avatar dropdown-toggle" th:src="${#strings.startsWith(USER_INFO.avatar,'/') ?  '/getFile?path=' + USER_INFO.avatar : USER_INFO.avatar + '?x-oss-process=image/resize,m_fill,w_40,h_40'}" th:alt="#{header.image.avatar}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+            <!--<div class="dropdown-menu dropdown-menu-right base-header__dropdown-menu">-->
+              <!--<a class="dropdown-item base-header__dropdown-item" href="javascript:void(0);" th:text="#{header.signOut}" onclick="signOut()"></a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    </nav>
+  </header>
+</div>
+</html>
