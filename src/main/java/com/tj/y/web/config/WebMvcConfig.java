@@ -7,19 +7,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
-  private static final String[] STATIC_RESOURCES = {
-      "/assert/**",
-      "/common/**",
-      "/components/**",
-      "/i18n/**",
-      "/layout/**",
-      "/vendor/**",
-      "/views/**",
-      "/apple-*.png",
-      "favicon.ico",
-      "robots.txt",
-  };
-
   /**
    * 访问外部文件配置，访问linux 下的文件
    */
